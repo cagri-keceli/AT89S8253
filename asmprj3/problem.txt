@@ -1,0 +1,26 @@
+Problem Statement: Multi-Mode Square Wave Generator and Frequency Display using 8051 
+Design an 8051 microcontroller-based LED driver system controlled by an external interrupt, operating at variable frequencies. 
+1. Hardware Configuration 
+• Outputs: Four LEDs are connected to pins P2.0, P2.1, P2.2, and P2.3. 
+• Control: A push button is connected to P3.2. 
+• Display: 7-segment displays are connected to Port 0 to visualize frequency data. 
+2. Operational Scenario 
+• Initialization (Reset): Upon system reset, all LEDs must be OFF, and the display must show "0". 
+• Frequency Selection: Each press of the button at P3.2 (triggering an external interrupt) shall cycle the LED blinking 
+frequency in the following sequence: 2Hz ? 4Hz ? 8Hz ? 16Hz. 
+• Cycle Reset: If the button is pressed while the system is in 16Hz mode, all LEDs must turn off, and the system must return 
+to the Initial State (0 Hz / Standby). 
+• Visualization: The currently selected frequency value (2, 4, 8, or 16) must be displayed in real-time on the 7-segment 
+displays. 
+3. Technical Requirements (Software Constraints) 
+• Precision Timing: Frequency periods ($T = 1/f$) must be generated using Timer0 or Timer1 in interrupt-driven mode. 
+Software-based delay loops are strictly prohibited. 
+• Interrupt Management: External interrupts must be utilized for button debouncing and state switching. 
+• Duty Cycle: A 50% Duty Cycle must be maintained across all frequencies (equal ON and OFF durations). 
+• Timer Optimization (Algorithmic Scaling): A base timing value must be calculated for one specific operating mode. All 
+other frequency states must be mathematically adapted from this base value. Do not hardcode unique start values for 
+every single frequency; instead, use a scaling algorithm (e.g., modifying an overflow counter). 
+• Code Optimization: The assembly code must be written with the minimum number of instructions and optimal memory 
+usage. 
+• Implementation & Verification: The design must be verified in both a compiler debugger and Proteus simulation. The 
+timing values and system transitions must be formally validated in the project documentation.

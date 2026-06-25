@@ -1,0 +1,111 @@
+A51 MACRO ASSEMBLER  ASMPRJ3                                                              06/25/2026 17:35:39 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\asmprj3.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE asmprj3.a51 SET(SMALL) DEBUG PRINT(.\Listings\asmprj3.lst) OBJECT(.\Obj
+                      ects\asmprj3.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 00H
+0000 800B              2         JMP X
+                       3     
+0003                   4         ORG 03H      ;HARICI KESME
+0003 802B              5         JMP HARICI
+000B                   6         ORG 0BH     ;Timer 0 Kesme Vektörü
+000B 8034              7         JMP T
+000D                   8     X:   
+000D 7800              9         MOV R0, #00H    ;Modlar için
+000F 7901             10         MOV R1, #01H   ;zamanlayici Kesme Sayaci
+0011 75A000           11         MOV P2, #00H     
+0014 900067           12         MOV DPTR, #TABLE    ;7Segment 0
+0017 E8               13         MOV A, R0
+0018 93               14         MOVC A, @A+DPTR
+0019 F580             15         MOV P0, A
+                      16             ;timer
+001B 758901           17         MOV TMOD, #00000001H ; T = 1/f   1/16HZ
+001E 758C9A           18         MOV TH0, #9AH   ;dptr kullanimda oldugu için direkt yükledim
+0021 758A46           19         MOV TL0, #46H
+0024 D288             20         SETB IT0       ;düsen kenar
+0026 D2A8             21         SETB EX0       ;harici kesme
+0028 D2A9             22         SETB ET0       ;timer 0 kewsme
+002A D2AF             23         SETB EA        ;kesmeleri açtik
+002C D28C             24         SETB TR0       ;timer baslattik
+002E                  25     SONSUZ:
+002E 80FE             26         SJMP SONSUZ
+0030                  27     HARICI:
+0030 08               28         INC R0         ; modu 1 artir
+0031 B80505           29         CJNE R0, #05H, DISPLAY
+0034 7800             30         MOV R0, #00H   ; 0 moduna doner
+0036 75A000           31             MOV P2, #00H
+0039                  32     DISPLAY:
+0039 900067           33         MOV DPTR, #TABLE
+003C E8               34         MOV A, R0
+003D 93               35         MOVC A, @A+DPTR
+003E F580             36         MOV P0, A
+0040 32               37         RETI
+0041                  38     T: 
+0041 B80002           39         CJNE R0, #00H, KONTROL
+0044 8020             40         SJMP SON
+0046                  41     KONTROL:
+0046 D91E             42         DJNZ R1, SON        
+0048 E5A0             43         MOV A, P2
+004A 640F             44         XRL A, #00001111B
+004C F5A0             45         MOV P2, A
+004E E8               46         MOV A, R0
+004F B40104           47         CJNE A, #01H, M2
+0052 7908             48         MOV R1, #08H        ; 2Hz   250ms   8
+0054 8010             49         SJMP SON
+0056                  50     M2:
+0056 B40204           51         CJNE A, #02H, M3
+0059 7904             52         MOV R1, #04H        ; 4Hz   125ms   4
+005B 8009             53         SJMP SON
+005D                  54     M3:
+005D B40304           55         CJNE A, #03H, M4
+0060 7902             56         MOV R1, #02H        ; 8Hz   62.5ms  2
+0062 8002             57         SJMP SON
+A51 MACRO ASSEMBLER  ASMPRJ3                                                              06/25/2026 17:35:39 PAGE     2
+
+0064                  58     M4:
+0064 7901             59         MOV R1, #01H        ; 16Hz  31.25ms 1
+0066                  60     SON:  
+0066 32               61         RETI
+0067 C0A49980         62     TABLE: DB 0c0H, 0A4H, 099H, 080H, 08EH
+006B 8E                      
+                      63         END
+A51 MACRO ASSEMBLER  ASMPRJ3                                                              06/25/2026 17:35:39 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+DISPLAY. . . . . .  C ADDR   0039H   A   
+EA . . . . . . . .  B ADDR   00A8H.7 A   
+ET0. . . . . . . .  B ADDR   00A8H.1 A   
+EX0. . . . . . . .  B ADDR   00A8H.0 A   
+HARICI . . . . . .  C ADDR   0030H   A   
+IT0. . . . . . . .  B ADDR   0088H.0 A   
+KONTROL. . . . . .  C ADDR   0046H   A   
+M2 . . . . . . . .  C ADDR   0056H   A   
+M3 . . . . . . . .  C ADDR   005DH   A   
+M4 . . . . . . . .  C ADDR   0064H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+SON. . . . . . . .  C ADDR   0066H   A   
+SONSUZ . . . . . .  C ADDR   002EH   A   
+T. . . . . . . . .  C ADDR   0041H   A   
+TABLE. . . . . . .  C ADDR   0067H   A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+X. . . . . . . . .  C ADDR   000DH   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

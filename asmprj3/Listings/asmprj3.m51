@@ -1,0 +1,109 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    06/25/2026  17:35:39  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\asmprj3.obj TO .\Objects\asmprj3 PRINT (.\Listings\asmprj3.m51) RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\asmprj3.obj (ASMPRJ3)
+
+
+LINK MAP OF MODULE:  .\Objects\asmprj3 (ASMPRJ3)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     006CH     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\asmprj3 (ASMPRJ3)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ASMPRJ3
+  C:0039H         SYMBOL        DISPLAY
+  B:00A8H.7       SYMBOL        EA
+  B:00A8H.1       SYMBOL        ET0
+  B:00A8H.0       SYMBOL        EX0
+  C:0030H         SYMBOL        HARICI
+  B:0088H.0       SYMBOL        IT0
+  C:0046H         SYMBOL        KONTROL
+  C:0056H         SYMBOL        M2
+  C:005DH         SYMBOL        M3
+  C:0064H         SYMBOL        M4
+  D:0080H         SYMBOL        P0
+  D:00A0H         SYMBOL        P2
+  C:0066H         SYMBOL        SON
+  C:002EH         SYMBOL        SONSUZ
+  C:0041H         SYMBOL        T
+  C:0067H         SYMBOL        TABLE
+  D:008CH         SYMBOL        TH0
+  D:008AH         SYMBOL        TL0
+  D:0089H         SYMBOL        TMOD
+  B:0088H.4       SYMBOL        TR0
+  C:000DH         SYMBOL        X
+  C:0000H         LINE#         2
+  C:0003H         LINE#         5
+  C:000BH         LINE#         7
+  C:000DH         LINE#         9
+  C:000FH         LINE#         10
+  C:0011H         LINE#         11
+  C:0014H         LINE#         12
+  C:0017H         LINE#         13
+  C:0018H         LINE#         14
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  06/25/2026  17:35:39  PAGE 2
+
+
+  C:0019H         LINE#         15
+  C:001BH         LINE#         17
+  C:001EH         LINE#         18
+  C:0021H         LINE#         19
+  C:0024H         LINE#         20
+  C:0026H         LINE#         21
+  C:0028H         LINE#         22
+  C:002AH         LINE#         23
+  C:002CH         LINE#         24
+  C:002EH         LINE#         26
+  C:0030H         LINE#         28
+  C:0031H         LINE#         29
+  C:0034H         LINE#         30
+  C:0036H         LINE#         31
+  C:0039H         LINE#         33
+  C:003CH         LINE#         34
+  C:003DH         LINE#         35
+  C:003EH         LINE#         36
+  C:0040H         LINE#         37
+  C:0041H         LINE#         39
+  C:0044H         LINE#         40
+  C:0046H         LINE#         42
+  C:0048H         LINE#         43
+  C:004AH         LINE#         44
+  C:004CH         LINE#         45
+  C:004EH         LINE#         46
+  C:004FH         LINE#         47
+  C:0052H         LINE#         48
+  C:0054H         LINE#         49
+  C:0056H         LINE#         51
+  C:0059H         LINE#         52
+  C:005BH         LINE#         53
+  C:005DH         LINE#         55
+  C:0060H         LINE#         56
+  C:0062H         LINE#         57
+  C:0064H         LINE#         59
+  C:0066H         LINE#         61
+  -------         ENDMOD        ASMPRJ3
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0065H BYTE ( 4%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=108
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
