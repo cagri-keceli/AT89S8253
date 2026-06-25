@@ -1,0 +1,3 @@
+There is a button connected to pin P1.0 (when the button is pressed, the pin becomes Logic 0), and an LED connected to pin P0.0. 
+When the button is pressed, the system will activate and continuously blink the LED at 1-second intervals using Timer-0, 16-bit 
+Mode (Mode 1). 

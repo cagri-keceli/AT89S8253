@@ -1,0 +1,58 @@
+A51 MACRO ASSEMBLER  ASMPRJ2                                                              06/25/2026 17:40:54 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\asmprj2.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE asmprj2.a51 SET(SMALL) DEBUG PRINT(.\Listings\asmprj2.lst) OBJECT(.\Obj
+                      ects\asmprj2.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     org 00h
+0000 8000              2             sjmp x
+0002                   3     x:
+0002 758901            4             MOV TMOD, #00000001B
+0005 C280              5             clr p0.0
+0007 2090FD            6     buton: JB P1.0, buton
+000A                   7     sayac:
+000A 790D              8             mov r1, #13d
+000C                   9     timer:
+000C 90059A           10             MOV DPTR, #1434d
+000F 85838C           11             MOV TH0, DPH
+0012 85828A           12         MOV TL0, DPL
+0015 D28C             13             SETB TR0
+0017 308DFD           14     bekle: jnb tf0, bekle
+001A C28D             15             clr tf0
+001C C28C             16             clr tr0
+001E D9EC             17             djnz r1, timer
+0020 B280             18             cpl p0.0
+0022 80E6             19             sjmp sayac
+                      20             end
+A51 MACRO ASSEMBLER  ASMPRJ2                                                              06/25/2026 17:40:54 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+BEKLE. . . . . . .  C ADDR   0017H   A   
+BUTON. . . . . . .  C ADDR   0007H   A   
+DPH. . . . . . . .  D ADDR   0083H   A   
+DPL. . . . . . . .  D ADDR   0082H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+SAYAC. . . . . . .  C ADDR   000AH   A   
+TF0. . . . . . . .  B ADDR   0088H.5 A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TIMER. . . . . . .  C ADDR   000CH   A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+X. . . . . . . . .  C ADDR   0002H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
