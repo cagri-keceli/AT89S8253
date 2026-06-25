@@ -1,0 +1,3 @@
+An array of 10 elements is stored in the internal data memory at addresses from 10h to 19h. Using indirect addressing and 
+the DJNZ instruction, write an 8051 Assembly program that calculates the sum of the array elements and sends the result 
+(assume the result is smaller than 255D) to Port P0.

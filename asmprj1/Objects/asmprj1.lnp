@@ -1,0 +1,3 @@
+".\Objects\asmprj1.obj" 
+TO ".\Objects\asmprj1" 
+PRINT(".\Listings\asmprj1.m51") RAMSIZE(256) 

@@ -1,0 +1,54 @@
+A51 MACRO ASSEMBLER  ASMPRJ1                                                              06/25/2026 17:42:54 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\asmprj1.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE asmprj1.a51 SET(SMALL) DEBUG PRINT(.\Listings\asmprj1.lst) OBJECT(.\Obj
+                      ects\asmprj1.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     org 00h
+0000 8000              2             sjmp x
+0002                   3     x:
+0002 751001            4             mov 10h, #01h
+0005 751107            5             mov 11h, #07h
+0008 75120A            6             mov 12h, #0ah
+000B 751313            7             mov 13h, #13h
+000E 751409            8             mov 14h, #09h
+0011 75150C            9             mov 15h, #0ch
+0014 75160A           10             mov 16h, #0ah
+0017 75170B           11             mov 17h, #0bh
+001A 751804           12             mov 18h, #04h
+001D 751908           13             mov 19h, #08h
+0020                  14     x1:
+0020 7810             15             mov r0, #10h
+0022 790A             16             mov r1, #10d
+0024 7400             17             mov a, #00h
+0026                  18     dongu:
+0026 26               19             add a, @r0
+0027 08               20             inc r0
+0028 D9FC             21             djnz r1, dongu
+002A F580             22             mov p0, a
+002C                  23     son:
+002C 80FE             24             sjmp son
+                      25             end
+A51 MACRO ASSEMBLER  ASMPRJ1                                                              06/25/2026 17:42:54 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+DONGU. . . . . . .  C ADDR   0026H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+SON. . . . . . . .  C ADDR   002CH   A   
+X. . . . . . . . .  C ADDR   0002H   A   
+X1 . . . . . . . .  C ADDR   0020H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
